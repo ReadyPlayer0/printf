@@ -41,7 +41,7 @@ int _printf(const char * const format, ...)
 			}
 			j--;
 		}
-		_putchar(format[i]); // Print regular characters
+		print_character(format[i]); // Print regular characters
 		len++;
 		i++;
 	}
