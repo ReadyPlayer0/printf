@@ -8,9 +8,9 @@
 int _printf(const char * const format, ...)
 {
 	convert_match m[] = {
-		{"%s", print_string}, {"%c", print_character},
+		{"%s", print_string}, {"%c", print_char},
 		{"%%", print_37},
-		{"%i", print_int}, {"%d", print_dec}, {"%r", print_reverse_string},
+		{"%i", print_int}, {"%d", print_decimal}, {"%r", print_reverse_string},
 		{"%R", print_rot13}, {"%b", print_binary}, {"%u", print_unsigned},
 		{"%o", print_octal}, {"%x", print_hex}, {"%X", print_HEX},
 		{"%S", print_exclusive_string}, {"%p", print_pointer}
@@ -41,7 +41,7 @@ int _printf(const char * const format, ...)
 			}
 			j--;
 		}
-		print_character(format[i]); // Print regular characters
+		_putchar(format[i]); // Print regular characters
 		len++;
 		i++;
 	}

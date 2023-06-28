@@ -18,14 +18,14 @@ int print_pointer(va_list val)
     {
         for (i = 0; s[i] != '\0'; i++)
         {
-            print_character(s[i]);
+           _putchar(s[i]);
         }
         return i;
     }
 
     a = (unsigned long int)p;
-    print_character('0');
-    print_character('x');
+   _putchar('0');
+   _putchar('x');
     b = print_HEX_auxiliary(a);
     return (b + 2);
 }

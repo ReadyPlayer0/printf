@@ -1,22 +1,21 @@
 #include "main.h"
-
 /**
- * print_int - Prints an integer.
- * @val: Argument to print.
- * Return: Number of characters printed.
+ * printf_int - prints integer
+ * @args: argument to print
+ * Return: number of characters printed
  */
-int print_int(va_list val)
+int print_int(va_list args)
 {
-	int n = va_arg(val, int);
+	int n = va_arg(args, int);
 	int num, last = n % 10, digit, exp = 1;
-	int i = 1;
+	int  i = 1;
 
 	n = n / 10;
 	num = n;
 
 	if (last < 0)
 	{
-		print_character('-');
+		_putchar('-');
 		num = -num;
 		n = -n;
 		last = -last;
@@ -33,27 +32,28 @@ int print_int(va_list val)
 		while (exp > 0)
 		{
 			digit = num / exp;
-			print_character(digit + '0');
+			_putchar(digit + '0');
 			num = num - (digit * exp);
 			exp = exp / 10;
 			i++;
 		}
 	}
-	print_character(last + '0');
+	_putchar(last + '0');
 
 	return (i);
 }
 
 /**
- * print_dec - Prints a decimal.
- * @val: Argument to print.
- * Return: Number of characters printed.
+ * printf_dec - Prints a decimal
+ * @args: Argument to print
+ * Return: number of characters printed
  */
-int print_dec(va_list val)
+
+int print_decimal(va_list args)
 {
-	int n = va_arg(val, int);
+	int n = va_arg(args, int);
 	int num, last = n % 10, digit;
-	int i = 1;
+	int  i = 1;
 	int exp = 1;
 
 	n = n / 10;
@@ -61,7 +61,7 @@ int print_dec(va_list val)
 
 	if (last < 0)
 	{
-		print_character('-');
+		_putchar('-');
 		num = -num;
 		n = -n;
 		last = -last;
@@ -78,13 +78,13 @@ int print_dec(va_list val)
 		while (exp > 0)
 		{
 			digit = num / exp;
-			print_character(digit + '0');
+			_putchar(digit + '0');
 			num = num - (digit * exp);
 			exp = exp / 10;
 			i++;
 		}
 	}
-	print_character(last + '0');
+	_putchar(last + '0');
 
 	return (i);
 }

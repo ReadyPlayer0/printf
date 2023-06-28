@@ -5,7 +5,7 @@
  * @val: Arguments containing the string to be printed.
  * Return: The length of the string.
  */
-int printf_exclusive_string(va_list val)
+int print_exclusive_string(va_list val)
 {
     char *s;
     int i, len = 0;
@@ -18,20 +18,20 @@ int printf_exclusive_string(va_list val)
     {
         if (s[i] < 32 || s[i] >= 127)
         {
-            print_character('\\');
-            print_character('x');
+           _putchar('\\');
+           _putchar('x');
             len += 2;
             cast = s[i];
             if (cast < 16)
             {
-                print_character('0');
+               _putchar('0');
                 len++;
             }
-            len += print_HEX_aux(cast);
+            len += print_HEX_auxiliary(cast);
         }
         else
         {
-            print_character(s[i]);
+           _putchar(s[i]);
             len++;
         }
     }

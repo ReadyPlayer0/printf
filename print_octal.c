@@ -28,7 +28,7 @@ int print_octal(va_list val)
     }
     for (i = counter - 1; i >= 0; i--)
     {
-        print_character(array[i] + '0');
+       _putchar(array[i] + '0');
     }
     free(array);
     return counter;

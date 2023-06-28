@@ -5,7 +5,7 @@
  * @val: arguments.
  * Return: the number of digits printed.
  */
-int printf_HEX(va_list val)
+int printf_hex(va_list val)
 {
     int i;
     int *array;
@@ -30,7 +30,7 @@ int printf_HEX(va_list val)
     {
         if (array[i] > 9)
             array[i] = array[i] + 7;
-        print_character(array[i] + '0');
+       _putchar(array[i] + '0');
     }
     free(array);
     return digitCount;

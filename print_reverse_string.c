@@ -6,7 +6,7 @@
  *
  * Return: Number of characters printed.
  */
-int printf_srev(va_list args)
+int print_reverse_string(va_list args)
 {
     char *s = va_arg(args, char*);
     int i;
@@ -17,7 +17,7 @@ int printf_srev(va_list args)
     while (s[j] != '\0')
         j++;
     for (i = j - 1; i >= 0; i--)
-        print_character(s[i]);
+       _putchar(s[i]);
     return j;
 }
 

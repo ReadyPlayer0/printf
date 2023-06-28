@@ -21,14 +21,14 @@ int print_binary(va_list val)
         if (flag)
         {
             b = p >> (31 - i);
-            print_character(b + '0');
+            _putchar(b + '0');
             count++;
         }
     }
     if (count == 0)
     {
         count++;
-        print_character('0');
+        _putchar('0');
     }
     return (count);
 }

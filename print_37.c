@@ -6,6 +6,6 @@
  */
 int print_37(void)
 {
-    print_character(37);
+    _putchar(37);
     return (1);
 }
