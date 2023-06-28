@@ -1,14 +1,37 @@
-#include "print_header.h"
+#include "main.h"
 
 /**
- * print_character - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success, the number of characters written (1).
- * On error, -1 is returned, and errno is set appropriately.
+ * print_HEX_auxiliary - Prints a hexadecimal number.
+ * @num: The number to print.
+ * Return: The number of digits printed.
  */
-int print_character(char c)
+int print_HEX_auxiliary(unsigned int num)
 {
-	return (write(1, &c, 1));
-}
+    int i;
+    int *array;
+    int counter = 0;
+    unsigned int temp = num;
 
+    while (num / 16 != 0)
+    {
+        num /= 16;
+        counter++;
+    }
+    counter++;
+    array = malloc(counter * sizeof(int));
+
+    for (i = 0; i < counter; i++)
+    {
+        array[i] = temp % 16;
+        temp /= 16;
+    }
+    for (i = counter - 1; i >= 0; i--)
+    {
+        if (array[i] > 9)
+            _print_character(array[i] + 7);
+        else
+            _print_character(array[i] + '0');
+    }
+    free(array);
+    return counter;
+}

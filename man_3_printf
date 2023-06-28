@@ -1,0 +1,124 @@
+.\" _printf man page
+.\"
+.TH _PRINTF "June 17 2023" "0.1" "Library functions manual"
+
+.SH NAME
+.B _printf
+- custom version for printf function.
+
+.SH SYNOPSIS
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+
+The printf function sends formatted output to stdout.
+A custom _printf() function for learning purposes was developed by cohort #8 students Nicks and Mose Parsanka.
+The _printf() function takes a format string as input, which is a character string beginning and ending in its initial shift state, if any. It uses the '%' operator to indicate format specifiers.
+
+.SS Compilation
+
+To compile the _printf function, use the following command:
+
+.P
+.RS
+#include "main.h"
+
+$ gcc -Wall -Werror -Wextra -pedantic -Wno-format *.c
+$ gcc -Wall -Werror -Wextra -pedantic -g -Wno-format *.c (for gdb debugging)
+.RE
+
+.SS Printing
+.RS
+
+int _printf(const char *format, ...);
+
+The format parameter is the string that contains format specifiers preceded by a '%' symbol. The '...' is used to indicate a variadic argument (any type of variable).
+
+.SS Example
+
+.RS
+
+.B Input
+.PP
+_printf("Hello, this is %s from cohort %d\\n", "Alice", 8);
+.PP
+.B Output
+.PP
+Hello, this is Alice from cohort 8
+.RE
+
+.SS Return Value
+
+The return value of _printf is the number of characters printed, excluding the null terminator.
+
+.SH FORMAT SPECIFIERS
+.SH ""
+
+The _printf function supports the following format specifiers:
+
+.SH FLAG SPECIFIERS
+.SH ""
+
+The custom and non-custom specifier modifiers.
+
+.SH THE LENGTH MODIFIERS
+.SH ""
+
+The length modifiers.
+
+.SH THE CONVERSION SPECIFIERS
+.SH ""
+
+.RS
+The current arguments handled by conversion specifiers are:
+
+.IT
+.B %
+- The '%' symbol is used without an argument, and the conversion specification has to be '%%'.
+
+.IT
+.B c
+- The integer or char argument is converted to unsigned char.
+
+.IT
+.B d, i
+- The int argument is converted to signed decimal integer.
+
+.IT
+.B s
+- The string argument. _printf handles the 's' conversion specifier if the argument value is not a pointer to a literal string.
+
+.IT
+.B o, u, x, X
+- The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), unsigned hexadecimal notation (x) for lowercase, and (X) for uppercase.
+
+.IT
+.B b
+- The unsigned int argument is converted to binary.
+
+.IT
+.B p
+- The pointer is printed in hexadecimal format preceded by '0x'.
+
+.IT
+.B r, R
+- 'r' prints the string in reverse. 'R' prints the encrypted ROT13.
+
+.IT
+.B S
+- ASCII characters less than 32 and greater than 127 appear in the argument string. They are converted to hexadecimal preceded by '\x'.
+
+.RE
+
+.P
+
+.SH AUTHORS
+.SH ""
+
+Adetunji Adeyimika and David Oyakhilome
+
+.B Twitter
+.PP
+@Ready_player0 @Strange_Strategy

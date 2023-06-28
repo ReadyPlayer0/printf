@@ -1,4 +1,4 @@
-#include "main.h"
+#include "print_header.h"
 
 /**
  * print_char - prints a char.
@@ -10,7 +10,5 @@ int print_char(va_list val)
     char s;
 
     s = va_arg(val, int);
-    _putchar(s);
-    return (1);
+    return print_character(s);
 }
-

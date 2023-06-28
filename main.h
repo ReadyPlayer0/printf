@@ -1,5 +1,5 @@
-#ifndef PRINT_HEADER_H
-#define PRINT_HEADER_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
