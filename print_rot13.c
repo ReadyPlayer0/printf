@@ -30,7 +30,7 @@ int print_rot13(va_list args)
         }
         if (!k)
         {
-            print_character(s[i]);
+           _putchar(s[i]);
             counter++;
         }
     }
