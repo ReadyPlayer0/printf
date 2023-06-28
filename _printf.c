@@ -12,7 +12,7 @@ int _printf(const char * const format, ...)
 		{"%%", print_37},
 		{"%i", print_int}, {"%d", print_decimal}, {"%r", print_reverse_string},
 		{"%R", print_rot13}, {"%b", print_binary}, {"%u", print_unsigned},
-		{"%o", print_octal}, {"%x", print_hex}, {"%X", print_HEX},
+		{"%o", print_octal}, {"%x", print_hex},
 		{"%S", print_exclusive_string}, {"%p", print_pointer}
 	};
 
