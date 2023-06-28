@@ -1,4 +1,4 @@
-#include "print_header.h"
+#include "main.h"
 
 /**
  * print_char - prints a char.
