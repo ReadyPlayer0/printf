@@ -21,27 +21,27 @@ int _printf(const char * const format, ...)
 
 	va_start(args, format);
 
-	// Check for invalid format or empty format
+	/* Check for invalid format or empty format*/
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	// Loop through the format string
+	/* Loop through the format string*/
 	while (format[i] != '\0')
 	{
 		j = 13;
-		// Check each format specifier in the convert_match array
+		/* Check each format specifier in the convert_match array*/
 		while (j >= 0)
 		{
-			// Match the format specifier with the convert_match entry
+			/* Match the format specifier with the convert_match entry*/
 			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
 			{
-				len += m[j].f(args); // Call the corresponding print function
+				len += m[j].f(args); /* Call the corresponding print function*/
 				i = i + 2;
 				goto Here;
 			}
 			j--;
 		}
-		_putchar(format[i]); // Print regular characters
+		_putchar(format[i]); /* Print regular characters*/
 		len++;
 		i++;
 	}
