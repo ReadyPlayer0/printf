@@ -15,7 +15,7 @@ int print_unsigned(va_list args)
 
     if (last < 0)
     {
-        print_character('-');
+       _putchar('-');
         num = -num;
         n = -n;
         last = -last;
@@ -32,13 +32,13 @@ int print_unsigned(va_list args)
         while (exp > 0)
         {
             digit = num / exp;
-            print_character(digit + '0');
+           _putchar(digit + '0');
             num = num - (digit * exp);
             exp = exp / 10;
             i++;
         }
     }
-    print_character(last + '0');
+   _putchar(last + '0');
 
     return i;
 }

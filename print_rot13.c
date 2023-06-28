@@ -23,7 +23,7 @@ int print_rot13(va_list args)
         {
             if (s[i] == alpha[j])
             {
-                print_character(beta[j]);
+               _putchar(beta[j]);
                 counter++;
                 k = 1;
             }
