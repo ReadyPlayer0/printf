@@ -1,37 +1,37 @@
 #include "main.h"
-
 /**
- * print_rot13 - prints a string encoded in ROT13.
- * @args: arguments.
- * Return: the number of characters printed.
+ * printf_rot13 - printf str to ROT13 place into buffer
+ * @args: type struct va_arg where is allocated printf arguments
+ * Return: counter
+ *
  */
-int prinf_rot13(va_list args)
+int printf_rot13(va_list args)
 {
-	char *str = va_arg(args, char *);
-	int i, j, count = 0;
-	char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i, j, counter = 0;
+	int k = 0;
+	char *s = va_arg(args, char*);
+	char alpha[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
+	char beta[] = {"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"};
 
-	if (str == NULL)
-		str = "(null)";
-
-	for (i = 0; str[i] != '\0'; i++)
+	if (s == NULL)
+		s = "(null)";
+	for (i = 0; s[i]; i++)
 	{
-		for (j = 0; alphabet[j] != '\0'; j++)
+		k = 0;
+		for (j = 0; alpha[j] && !k; j++)
 		{
-			if (str[i] == alphabet[j])
+			if (s[i] == alpha[j])
 			{
-				_putchar(rot13[j]);
-				count++;
-				break;
+				_putchar(beta[j]);
+				counter++;
+				k = 1;
 			}
 		}
-		if (alphabet[j] == '\0')
+		if (!k)
 		{
-			_putchar(str[i]);
-			count++;
+			_putchar(s[i]);
+			counter++;
 		}
 	}
-
-	return count;
+	return (counter);
 }

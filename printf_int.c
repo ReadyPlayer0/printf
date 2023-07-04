@@ -1,16 +1,14 @@
 #include "main.h"
-
 /**
- * print_int - Prints an integer.
- * @args: Argument to print.
- *
- * Return: Number of characters printed.
+ * printf_int - prints integer
+ * @args: argument to print
+ * Return: number of characters printed
  */
 int printf_int(va_list args)
 {
 	int n = va_arg(args, int);
 	int num, last = n % 10, digit, exp = 1;
-	int i = 1;
+	int  i = 1;
 
 	n = n / 10;
 	num = n;
@@ -23,7 +21,6 @@ int printf_int(va_list args)
 		last = -last;
 		i++;
 	}
-
 	if (num > 0)
 	{
 		while (num / 10 != 0)
@@ -31,9 +28,7 @@ int printf_int(va_list args)
 			exp = exp * 10;
 			num = num / 10;
 		}
-
 		num = n;
-
 		while (exp > 0)
 		{
 			digit = num / exp;
@@ -43,23 +38,22 @@ int printf_int(va_list args)
 			i++;
 		}
 	}
-
 	_putchar(last + '0');
 
 	return (i);
 }
 
 /**
- * print_dec - Prints a decimal.
- * @args: Argument to print.
- *
- * Return: Number of characters printed.
+ * printf_dec - prints decimal
+ * @args: argument to print
+ * Return: number of characters printed
  */
+
 int printf_dec(va_list args)
 {
 	int n = va_arg(args, int);
 	int num, last = n % 10, digit;
-	int i = 1;
+	int  i = 1;
 	int exp = 1;
 
 	n = n / 10;
@@ -73,7 +67,6 @@ int printf_dec(va_list args)
 		last = -last;
 		i++;
 	}
-
 	if (num > 0)
 	{
 		while (num / 10 != 0)
@@ -81,9 +74,7 @@ int printf_dec(va_list args)
 			exp = exp * 10;
 			num = num / 10;
 		}
-
 		num = n;
-
 		while (exp > 0)
 		{
 			digit = num / exp;
@@ -93,7 +84,6 @@ int printf_dec(va_list args)
 			i++;
 		}
 	}
-
 	_putchar(last + '0');
 
 	return (i);

@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_octal - prints an octal number.
+ * printf_oct - prints an octal number.
  * @val: arguments.
  * Return: counter.
  */
@@ -32,3 +32,4 @@ int printf_oct(va_list val)
 	}
 	free(array);
 	return (counter);
+}
