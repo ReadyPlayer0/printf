@@ -1,39 +1,37 @@
 #include "main.h"
 
 /**
- * print_rot13 - Prints a string using the ROT13 cipher.
- * @args: Type struct va_arg where printf arguments are allocated.
- *
- * Return: Number of characters printed.
+ * print_rot13 - prints a string encoded in ROT13.
+ * @args: arguments.
+ * Return: the number of characters printed.
  */
-int print_rot13(va_list args)
+int prinf_rot13(va_list args)
 {
-    int i, j, counter = 0;
-    int k = 0;
-    char *s = va_arg(args, char*);
-    char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    char beta[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char *str = va_arg(args, char *);
+	int i, j, count = 0;
+	char *alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-    if (s == NULL)
-        s = "(null)";
-    for (i = 0; s[i]; i++)
-    {
-        k = 0;
-        for (j = 0; alpha[j] && !k; j++)
-        {
-            if (s[i] == alpha[j])
-            {
-               _putchar(beta[j]);
-                counter++;
-                k = 1;
-            }
-        }
-        if (!k)
-        {
-           _putchar(s[i]);
-            counter++;
-        }
-    }
-    return counter;
+	if (str == NULL)
+		str = "(null)";
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		for (j = 0; alphabet[j] != '\0'; j++)
+		{
+			if (str[i] == alphabet[j])
+			{
+				_putchar(rot13[j]);
+				count++;
+				break;
+			}
+		}
+		if (alphabet[j] == '\0')
+		{
+			_putchar(str[i]);
+			count++;
+		}
+	}
+
+	return count;
 }
-

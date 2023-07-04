@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * print_37 - prints the char 37.
- * Return: 1.
+ * print_37 - Prints the character '%'.
+ *
+ * Return: Always returns 1.
  */
-int print_37(void)
+int printf_37(void)
 {
-    _putchar(37);
-    return (1);
+	_putchar('%');
+	return (1);
 }
