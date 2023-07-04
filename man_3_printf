@@ -1,40 +1,51 @@
 .\" _printf man page
 .\"
-.TH _PRINTF "June 17 2023" "0.1" "Library functions manual"
+.\"
+.\"
+.\"
+.\"
+.TH _PRINTF "July 05 2023" "0.1" "Library functions manual"
 
 .SH NAME
+.SH ""
+
 .B _printf
 - custom version for printf function.
 
 .SH SYNOPSIS
+.SH ""
+
 #include "main.h"
 
-int _printf(const char *format, ...);
+int _printf(const char *[FORMAT], ...);
 
 .SH DESCRIPTION
+.SH ""
+
 
 The printf function sends formatted output to stdout.
-
-The _printf() function takes a format string as input, which is a character string beginning and ending in its initial shift state, if any. It uses the '%' operator to indicate format specifiers.
+A custom _printf() for learning purposes was developed by Adeyimika and David.
+_printf() function format string is a character string, beginning and ending in its initial shift state, if any. 
+These arguments are placed using the percentage '%' operator
 
 .SS Compilation
-
-To compile the _printf function, use the following command:
 
 .P
 .RS
 #include "main.h"
 
 $ gcc -Wall -Werror -Wextra -pedantic -Wno-format *.c
-$ gcc -Wall -Werror -Wextra -pedantic -g -Wno-format *.c (for gdb debugging)
+$ gcc -Wall -Werror -Wextra -pedantic -g -Wno-format *.c (for gdb debbuging)
 .RE
 
 .SS Printing
 .RS
 
-int _printf(const char *format, ...);
+int _printf(const char *[FORMAT], ...);
 
-The format parameter is the string that contains format specifiers preceded by a '%' symbol. The '...' is used to indicate a variadic argument (any type of variable).
+FORMAT is the string that takes n specifier followed by a '%'
+symbol. i.e. "Hello this is %s from %d cohort". '...' is the variadic \
+(any type of variable).
 
 .SS Example
 
@@ -42,57 +53,55 @@ The format parameter is the string that contains format specifiers preceded by a
 
 .B Input
 .PP
-_printf("Hello, this is %s from cohort %d\\n", "Adeyimika", 13);
+_printf("Hello this is %s from %d cohort\\n\\", 33);
 .PP
 .B Output
 .PP
-Hello, this is Adeyimika from cohort 13
+Hello this is %s from %d cohort
 .RE
 
 .SS Return Value
 
-The return value of _printf is the number of characters printed, excluding the null terminator.
-
-.SH FORMAT SPECIFIERS
-.SH ""
-
-The _printf function supports the following format specifiers:
+Return value is a n number of characters except NULL
 
 .SH FLAG SPECIFIERS
 .SH ""
 
-The custom and non-custom specifier modifiers.
+custom and non-custom specifier modifiers
 
 .SH THE LENGTH MODIFIERS
 .SH ""
 
-The length modifiers.
+Length modifiers.
 
 .SH THE CONVERSION SPECIFIERS
 .SH ""
 
 .RS
-The current arguments handled by conversion specifiers are:
+Current arguments handled by conversion specifiers:
 
 .IT
 .B %
-- The '%' symbol is used without an argument, and the conversion specification has to be '%%'.
+- % symbol is set without argument and conversion specification has to be'%%'.
 
 .IT
 .B c
-- The integer or char argument is converted to unsigned char.
+- integer or char argument converted to unsigned char.
 
 .IT
 .B d, i
-- The int argument is converted to signed decimal integer.
+- int argument is converted to signed decimal integer.
 
 .IT
 .B s
-- The string argument. _printf handles the 's' conversion specifier if the argument value is not a pointer to a literal string.
+- string argument. _printf handles s conversion specifier if the argument value
+ is not a pointer to a literal string. \
 
 .IT
+
 .B o, u, x, X
-- The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), unsigned hexadecimal notation (x) for lowercase, and (X) for uppercase.
+- unsigned int argument converted to unsigned octal (o), unsigned decimal (u),
+unsigned hexidecimal notation (x) for lower case and (X) for upper case
 
 .IT
 .B b
@@ -100,25 +109,26 @@ The current arguments handled by conversion specifiers are:
 
 .IT
 .B p
-- The pointer is printed in hexadecimal format preceded by '0x'.
+- The pointer is printed in hexidecimal format preceded by '0x'.
 
 .IT
 .B r, R
-- 'r' prints the string in reverse. 'R' prints the encrypted ROT13.
+- 'r' prints string in reverse. 'R' prints encrypted rot13.
 
 .IT
 .B S
-- ASCII characters less than 32 and greater than 127 appear in the argument string. They are converted to hexadecimal preceded by '\x'.
+- ascii <32 & >127 has to appear in the argument string. converted to
+hexadecimal preceded by \x
 
 .RE
 
 .P
 
-.SH AUTHORS
+.SH "AUTHORS"
 .SH ""
 
-Adetunji Adeyimika and David Oyakhilome
+Adeyimika Adetunji and David Oyahkhilome
 
 .B Twitter
 .PP
-@Ready_player0 @Strange_Strategy
+@Ready_player0 and @Strange_strategy
